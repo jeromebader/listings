@@ -1,5 +1,5 @@
 # listings-app
-Python Flask app for add and manage listing with pagination and usermanagement
+Python Flask app written as testapp for add and manage listing with pagination and usermanagement
 usable as a template
 
 
