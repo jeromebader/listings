@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+
+{% block title %}Listings{% endblock %}
+
+{% block content %}
+<h2>Listings Page</h2>
+<div class="listing">
+{% for row in datas %}
+      <tr>
+         <td>{{ row[0] }}</td>
+         <td>{{ row[1] }}</td>
+         <td>{{ row[2] }}</td>
+         <td>{{ row[3] }}</td>
+      </tr>
+{% endfor %}
+
+
+
+</div>
+<div class="msg">{{ msg }}</div>
+
+<div class="create_listing">
+<form action="{{ url_for('listings') }}" method="post" autocomplete="off">
+    <table style="undefined;table-layout: fixed; width: 622px">
+<colgroup>
+<col style="width: 278px">
+<col style="width: 344px">
+</colgroup>
+<thead>
+  <tr>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Domain name</td>
+    <td><input type="text" name="listing_domain" placeholder="domain name" id="listing_domain" required></td>
+  </tr>
+  <tr>
+    <td>Listing title</td>
+    <td><input type="text" name="listing_title" placeholder="listing title" id="listing_title" required></td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td><input type="text" name="listing_description" placeholder="Description of listing" id="listing_description" required></td>
+  </tr>
+  <tr>
+    <td>Price</td>
+    <td><input type="number" name="listing_price" placeholder="Price of listing" id="listing_price" required></td>
+  </tr>
+  <tr>
+    <td>Expiration of listing</td>
+    <td><input type="date" name="listing_expiration" placeholder="Expiration date of listing" id="listing_expiration" required></td>
+  </tr>
+  <tr>
+    <td>Start of Listing</td>
+    <td><input type="date" name="listing_start" placeholder="Start date of listing" id="listing_start"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><p><input type="submit" value="Submit Listing"></p><p><input type="reset" value="Reset"></p></td>
+  </tr>
+</tbody>
+
+
+
+</table>
+
+
+
+
+
+
+
+
+
+</form>
+</div>
+
+
+
+{% endblock %}

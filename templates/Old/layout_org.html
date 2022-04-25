@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{% block title %}{% endblock %}</title>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/open-iconic-bootstrap.min.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/animate.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aos.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ionicons.min.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.timepicker.css') }}">
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body class="loggedin">
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light">
+			<div>
+				<h1>Website Title</h1>
+                <a href="{{ url_for('home') }}"><i class="fas fa-home"></i>Home</a>
+				<a href="{{ url_for('signup_form')}}"><i class="fas fa-sign-in-alt"></i>Login</a>
+				<a href="{{ url_for('profile') }}"><i class="fas fa-user-circle"></i>Profile</a>
+				<a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+				<a href="{{ url_for('listings') }}"><i class="fas fa-list"></i>Listings</a>
+			</div>
+		</nav>
+		<div class="content">
+			{% block content %}{% endblock %}
+		</div>
+	</body>
+</html>

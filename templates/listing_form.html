@@ -1,0 +1,76 @@
+    {% extends 'layout_backend.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="container">
+     <h2 align="center">Welcome back, {{ username }}!</h2>
+    		<div class="row justify-content-center mb-5">
+                <p>{{ msg2 }}</p>
+
+<!--<p>Welcome back, {{ username }}!</p>-->
+<!--                <p>{{ msg3 }} , {{ nupages }} , {{ selected_element }} </p>-->
+            </div>
+</div>
+
+
+
+<form action={{url_for("listing_form")}} method="post" novalidate class="listing form" id="listings_form" autocomplete="off">
+        {{ form.hidden_tag() }}
+
+  <div class="form-group">
+ <label class="col-md-4 control-label" for="listing_title">listing_title</label>
+    {{ form.listing_title(size=64, placeholder="listing_title", id="listing_title", class="col-md-4 control-label") }}
+            {% for error in form.listing_title.errors %}
+    <a><strong>!Attention </strong><span style="white-space: nowrap;">please check</span></a>
+    {% endfor %}
+  </div>
+      <div class="form-group">
+ <label class="col-md-4 control-label"     for="listing_domain">listing_domain</label>
+    {{ form.listing_domain(size=64, placeholder="listing_domain", id="listing_domain", class="col-md-4 control-label") }}
+            {% for error in form.listing_domain.errors %}
+    <a><strong>!Attention </strong><span style="white-space: nowrap;">please check</span></a>
+    {% endfor %}
+      </div>
+      <div class="form-group">
+    <label class="col-md-4 control-label"        for="listing_description">listing_description</label>
+    {{ form.listing_description(size=800, placeholder="listing_description", id="listing_description", class="col-md-4 control-label") }}
+            {% for error in form.listing_description.errors %}
+    <a><strong>!Attention </strong><span style="white-space: nowrap;">please check</span></a>
+    {% endfor %}
+      </div>
+      <div class="form-group">
+ <label class="col-md-4 control-label"      for="listing_price">listing_price</label>
+    {{ form.listing_price(id="listing_price", class="col-md-4 control-label") }}
+            {% for error in form.listing_price.errors %}
+    <a><strong>!Attention </strong><span style="white-space: nowrap;">please check</span></a>
+    {% endfor %}
+      </div>
+      <div class="form-group">
+    <label class="col-md-4 control-label"     for="listing_type">listing_type</label>
+    {{ form.listing_type(id="listing_type", class="col-md-4 control-label") }}
+            {% for error in form.listing_type.errors %}
+    <a><strong>!Attention </strong><span style="white-space: nowrap;">please check</span></a>
+    {% endfor %}
+      </div>
+      <div class="form-group">
+    <label class="col-md-4 control-label"  for="listing_special">listing_special</label>
+    {{ form.listing_special(id="listing_special", class="col-md-4 control-label") }}
+            {% for error in form.listing_special.errors %}
+    <a><strong>!Attention </strong><span style="white-space: nowrap;">please check</span></a>
+    {% endfor %}
+      </div>
+
+
+
+
+{{ form.submit(class="btn btn-primary") }}
+</form>
+
+    <br><br>
+    <br><br>
+
+{% endblock %}
+
+

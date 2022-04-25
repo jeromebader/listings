@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Backend</title>
+		   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/open-iconic-bootstrap.min.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/animate.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aos.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ionicons.min.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.timepicker.css') }}">
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+<!--		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">-->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+{% extends 'layout_backend.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="container">
+     <h2 align="center">Welcome back, {{ username }}!</h2>
+    		<div class="row justify-content-center mb-5">
+                <p>{{ msg2 }}</p>
+
+<!--<p>Welcome back, {{ username }}!</p>-->
+<!--                <p>{{ msg3 }} , {{ nupages }} , {{ selected_element }} </p>-->
+            </div>
+</div>
+
+<div class="listings">
+<form action={{url_for("listings_form")}} method="post" novalidate class="listing form" id="listings_form" autocomplete="off">
+        {{ form.hidden_tag() }}
+
+  <div class="form-group">
+ <label class="col-md-4 control-label" for="listing_title">listing_title</label>
+    {{ form.listing_title(size=64, placeholder="listing_title", id="listing_title", class="col-md-4 control-label") }}
+            {% for error in form.listing_title.errors %}
+    <a><strong>!Attention </strong><span style="white-space: nowrap;">please check</span></a>
+    {% endfor %}
+  </div>
+      <div class="form-group">
+ <label class="col-md-4 control-label"     for="listing_domain">listing_domain</label>
+    {{ form.listing_domain(size=64, placeholder="listing_domain", id="listing_domain", class="col-md-4 control-label") }}
+            {% for error in form.listing_domain.errors %}
+    <a><strong>!Attention </strong><span style="white-space: nowrap;">please check</span></a>
+    {% endfor %}
+      </div>
+      <div class="form-group">
+    <label class="col-md-4 control-label"        for="listing_description">listing_description</label>
+    {{ form.listing_description(size=800, placeholder="listing_description", id="listing_description", class="col-md-4 control-label") }}
+            {% for error in form.listing_description.errors %}
+    <a><strong>!Attention </strong><span style="white-space: nowrap;">please check</span></a>
+    {% endfor %}
+      </div>
+      <div class="form-group">
+ <label class="col-md-4 control-label"      for="listing_price">listing_price</label>
+    {{ form.listing_price(id="listing_price", class="col-md-4 control-label") }}
+            {% for error in form.listing_price.errors %}
+    <a><strong>!Attention </strong><span style="white-space: nowrap;">please check</span></a>
+    {% endfor %}
+      </div>
+      <div class="form-group">
+    <label class="col-md-4 control-label"     for="listing_type">listing_type</label>
+    {{ form.listing_type(id="listing_type", class="col-md-4 control-label") }}
+            {% for error in form.listing_type.errors %}
+    <a><strong>!Attention </strong><span style="white-space: nowrap;">please check</span></a>
+    {% endfor %}
+      </div>
+      <div class="form-group">
+    <label class="col-md-4 control-label"  for="listing_special">listing_special</label>
+    {{ form.listing_special(id="listing_special", class="col-md-4 control-label") }}
+            {% for error in form.listing_special.errors %}
+    <a><strong>!Attention </strong><span style="white-space: nowrap;">please check</span></a>
+    {% endfor %}
+      </div>
+
+
+
+
+{{ form.submit() }}
+</form>
+
+    </div>
+
+{% endblock %}
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

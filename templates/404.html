@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+   {% block content %}
+    <title>{{ title }}</title>
+
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+
+</head>
+<body>
+<!-- Navigation -->
+<h1>ERROR 404</h1>
+<h2><a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a></h2>
+
+
+{% endblock %}
+</body>
+</html>

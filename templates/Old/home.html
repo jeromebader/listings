@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Backend</title>
+		   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/open-iconic-bootstrap.min.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/animate.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aos.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ionicons.min.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.timepicker.css') }}">
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+<!--		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">-->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+{% extends 'layout_backend.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="container">
+     <h2 align="center">Welcome back, {{ username }}!</h2>
+    		<div class="row justify-content-center mb-5">
+
+  <!--          
+<p>Welcome back, {{ username }}!</p>
+                <p>{{ msg3 }} , {{ nupages }} , {{ selected_element }} </p>-->
+            </div>
+</div>
+
+<!--{% for row in results %}-->
+<!--      <tr>-->
+<!--         <td>{{ row[0] }}</td>-->
+<!--         <td>{{ row[1] }}</td>-->
+<!--         <td>{{ row[2] }}</td>-->
+<!--         <td>{{ row[3] }}</td>-->
+<!--      </tr>-->
+<!--{% endfor %}-->
+
+
+
+
+    				<div class="table-responsive justify-content-center">
+
+
+				<table class="table table-hover">
+    <thead class="thead">
+        <tr>
+
+            <th>listing_id</th>
+            <th>listing_user</th>
+            <th>listing_domain</th>
+			<th>listing_title</th>
+			<th>listing_description</th>
+			<th>listing_price</th>
+			<th>listing_expiration</th>
+            <th>listing_start</th>
+            <th>listing_creation</th>
+
+        <tr>
+    </thead>
+    <tbody>
+        {% for row in results %}
+
+            <td>{{row[0]}}</td>
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+            <td>{{row[3]}}</td>
+            <td>{{row[4]}}</td>
+            <td>{{row[5]}}</td>
+            <td>{{row[6]}}</td>
+            <td>{{row[7]}}</td>
+            <td><a href="{{url_for('response', element=row[0])}}" class="btn btn-primary">Edit</a></td>
+
+
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+<!--                        <a href="{{url_for('home', page=page-1)}}">Previous Page</a>-->
+
+                        {% if page == 1 %}
+                        <a> {{ pagination.links }}</a>
+                        {% endif %}
+
+                        {% if page > 1 %}
+
+
+                        <nav aria-label="pagination_pages">
+                            <ul class="pagination justify-content-end">
+
+    <li class="page-item active">
+      <a class="page-link" href="{{url_for('home', page=page-1)}}" ><span><<</span></a>
+    </li>
+
+                                <a class="page-link" href="{{url_for('home', page=page)}}"><span>{{ page }}</span></a>
+
+                                               {% if nupages == page %}
+          <a class="page-link" href="{{url_for('home', page=page+1)}}"><span>>></span>
+                                                {% endif %}
+
+  </ul>
+</nav>
+
+                        {% endif %}
+					  </div>
+
+
+
+
+
+
+
+
+{% endblock %}
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
