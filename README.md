@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # listings-app
 Python Flask app written as a template for adding and managing listings with pagination and usermanagement
 usable as a template for your projects
