@@ -1,6 +1,7 @@
 # listings-app
 Python Flask app written as testapp for add and manage listing with pagination and usermanagement
-usable as a template
+usable as a template for your projects
+Python + Flask + MySQL
 
 
 mainfile: main9.py
