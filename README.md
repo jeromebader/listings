@@ -1,23 +1,7 @@
 <<<<<<< HEAD
-# listings-app
-Python Flask app for add and manage listing with pagination and usermanagement
-usable as a template
-
-What can you do with the template?
-Modify for projectmanagement or marketplace
-Usermanagement
-
-Use the listingpage.sql for importing dummy data in phpMyAdmin
-
-demouser:
-  username: test
-  password: test
-
-Please change the config file with SMTP data
-
 =======
 # listings-app
-Python Flask app written as testapp for add and manage listing with pagination and usermanagement
+Python Flask app written as a template for adding and managing listings with pagination and usermanagement
 usable as a template for your projects
 Python + Flask + MySQL
 
