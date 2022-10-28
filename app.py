@@ -20,7 +20,7 @@ from passlib.hash import sha256_crypt
 
 
 # Connecting to MySQL server at localhost using PyMySQL DBAPI
-engine = create_engine("mysql+mysqldb://jeroba1984:Evu0gis3@jeroba1984.mysql.pythonanywhere-services.com/jeroba1984$listingpage")
+engine = create_engine("mysql+mysqldb://jeroba1984:pass@jeroba1984.mysql.pythonanywhere-services.com/jeroba1984$listingpage")
 machine = engine.connect()
 ## Database for Alchemy is prepared
 Base = declarative_base()
@@ -30,7 +30,7 @@ Session.configure(bind=engine)
 
 ## Control inicio SQL Machine in Console
 print(machine)
-db = pymysql.connect("jeroba1984.mysql.pythonanywhere-services.com", "jeroba1984", "Evu0gis3", "jeroba1984$listingpage")
+db = pymysql.connect("jeroba1984.mysql.pythonanywhere-services.com", "jeroba1984", "pass", "jeroba1984$listingpage")
 
 # Secretkey in Config
 app = Flask(__name__)
